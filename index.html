@@ -166,8 +166,32 @@
       </div>
       <!-- FIM MENU -->
 
-      <div>
-        
+      <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] flex items-center justify-center">
+
+        <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+            <h2 class="font-bold text-center text-2xl mb-2">Meu carrinho</h2>
+
+            <div id="cart-items" class="flex justify-between mb-2 flex-col">
+
+            </div>
+
+            <p class="text-bold">Total: <span id="cart-total">0.00</span></p>
+            <p class="mt-4">Endereço de entrega:
+                <input type="text" name="endereço" id="address" 
+                placeholder="Digite seu endereço completo..." class="w-full border-2 p-1 rounded my-1">
+            </p>
+            <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
+
+            <div>
+                <button>
+                    
+                </button>
+                <button>
+
+                </button>
+            </div>
+        </div>
+
       </div>
 
       <footer class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center">
