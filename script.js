@@ -127,12 +127,23 @@ addressInput.addEventListener("input", function(event){
 
 //finalizar
 checkoutBtn.addEventListener("click", function(){
- /*   let isOpen = checkOpen()
+    let isOpen = checkOpen()
     if (!isOpen){
-        alert("RESTAURANTE FECHADO, ABERTO: Seg a Dom - 18:00 as 22:00")
+        Toastify({
+            text: "RESTAURANTE FECHADO NO MOMENTO",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #d86b6b, #ef4444)",
+            }, 
+        }).showToast();
         return
     }
-*/
+
     if(cart.length === 0){
         return
     }
@@ -155,13 +166,14 @@ checkoutBtn.addEventListener("click", function(){
 
     window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
 
-    console.log(carItems);
-    
+    cart = []
+    addressInput.value = ""
+    updateCartModal()
 })
 
 function checkOpen(){
     let now = new Date();
-    let hour =  now.getHours();
+    let hour = now.getHours();
     return hour >= 18 && hour < 22;
 }
 
