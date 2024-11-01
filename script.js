@@ -19,3 +19,19 @@ cartModal.addEventListener("click", function(event){
     }
 })
 
+menu.addEventListener("click", function(event){
+    let parentButton = event.target.closest(".add-to-cart-btn")
+    console.log(parentButton);
+    
+    if (parentButton){
+        const name = parentButton.getAttribute("data-name")
+        const price = parseFloat(parentButton.getAttribute("data-price"))
+        
+        //add no carrinho
+        addToCart(name, price)
+    }
+})
+
+function addToCart(name, price){
+    alert("o item é " + name)
+}
