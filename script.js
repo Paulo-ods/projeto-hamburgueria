@@ -39,6 +39,8 @@ function addToCart(name, price){
 
     if(existingItem){
         existingItem.quantity += 1
+        const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCounter.innerHTML = totalQuantity;
         return
     }else{
         cart.push({
@@ -58,22 +60,32 @@ function updateCartModal(){
 
     cart.forEach(item => {
         let cartitemsElement = document.createElement("div")
+        cartitemsElement.classList.add("flex", "justify-between", "mt-4", "flex-col")
 
         cartitemsElement.innerHTML = `
-            <div>
+            <div class="flex items-center justify-between">
                 <div>
-                    <p>${item.name}</p>
-                    <p>${item.quantity}</p>
-                    <p>R$ ${item.price}</p>
+                    <p class="font-bold">${item.name}</p>
+                    <p>Qtd: ${item.quantity}</p>
+                    <p class="font=medium mt-2">R$ ${item.price.toFixed(2)}</p>
                 </div>
 
-                <div>
-                    <button>
-                        Remover
-                    </button>
-                </div>
+                <button>
+                    Remover
+                </button>
             </div>
         `
+        total += item.price * item.quantity
+
         cartitemsContainer.appendChild(cartitemsElement)
     })
+
+    cartTotal.textContent = total.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    })
+
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCounter.innerHTML = totalQuantity;
 }
+
