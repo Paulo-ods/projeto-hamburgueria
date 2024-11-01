@@ -60,17 +60,17 @@ function updateCartModal(){
 
     cart.forEach(item => {
         let cartitemsElement = document.createElement("div")
-        cartitemsElement.classList.add("flex", "justify-between", "mt-4", "flex-col")
+        cartitemsElement.classList.add("flex", "justify-between", "py-3", "border-b-2",  "flex-col")
 
         cartitemsElement.innerHTML = `
             <div class="flex items-center justify-between">
                 <div>
                     <p class="font-bold">${item.name}</p>
                     <p>Qtd: ${item.quantity}</p>
-                    <p class="font=medium mt-2">R$ ${item.price.toFixed(2)}</p>
+                    <p class="font=medium">R$ ${item.price.toFixed(2)}</p>
                 </div>
 
-                <button class="remove-btn" data-name="${item.name}">
+                <button class="remove-btn bg-red-200 rounded px-2" data-name="${item.name}">
                     Remover
                 </button>
             </div>
@@ -157,7 +157,7 @@ checkoutBtn.addEventListener("click", function(){
     //api
     let carItems = cart.map((item) => {
         return (
-            `${item.name} Quantidade: (${item.quantity}) Preço: R$(${item.price})| `
+            ` ${item.name} Quantidade: (${item.quantity}) Preço: R$(${item.price}) | `
         )
     }).join("")
 
