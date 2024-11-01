@@ -8,7 +8,7 @@ let closeModalBtn = document.getElementById('close-modal-btn')
 let cartCounter = document.getElementById('cart-count')
 let addressInput = document.getElementById('address')
 let addressWarn = document.getElementById('address-warn')
-
+let openClose = document.getElementById('date-span')
 let cart = []
 
 cartBtn.addEventListener("click", function(){
@@ -114,4 +114,48 @@ function removeItemCart(name){
             return
         }
     }
+}
+
+addressInput.addEventListener("input", function(event){
+    let inputValue = event.target.value
+
+    if(inputValue !== ""){
+        addressInput.classList.remove("border-red-500")
+        addressWarn.classList.add("hidden")
+    }
+})
+
+//finalizar
+checkoutBtn.addEventListener("click", function(){
+    let isOpen = checkOpen()
+    if (!isOpen){
+        alert("RESTAURANTE FECHADO, ABERTO: Seg a Dom - 18:00 as 22:00")
+        return
+    }
+
+    if(cart.length === 0){
+        return
+    }
+
+    if(addressInput.value === ""){
+        addressWarn.classList.remove("hidden")
+        addressInput.classList.add("border-red-500")
+        return
+    }
+})
+
+function checkOpen(){
+    let now = new Date();
+    let hour =  now.getHours();
+    return hour >= 18 && hour < 22;
+}
+
+let isOpen = checkOpen()
+
+if(isOpen){
+    openClose.classList.remove("bg-red-500")
+    openClose.classList.add("bg-green-600")
+}else{
+    openClose.classList.remove("bg-green-600")
+    openClose.classList.add("bg-red-500")
 }
