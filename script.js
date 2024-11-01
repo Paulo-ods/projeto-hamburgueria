@@ -127,12 +127,12 @@ addressInput.addEventListener("input", function(event){
 
 //finalizar
 checkoutBtn.addEventListener("click", function(){
-    let isOpen = checkOpen()
+ /*   let isOpen = checkOpen()
     if (!isOpen){
         alert("RESTAURANTE FECHADO, ABERTO: Seg a Dom - 18:00 as 22:00")
         return
     }
-
+*/
     if(cart.length === 0){
         return
     }
@@ -142,6 +142,21 @@ checkoutBtn.addEventListener("click", function(){
         addressInput.classList.add("border-red-500")
         return
     }
+
+    //api
+    let carItems = cart.map((item) => {
+        return (
+            `${item.name} Quantidade: (${item.quantity}) Preço: R$(${item.price})| `
+        )
+    }).join("")
+
+    let message = encodeURIComponent(carItems)
+    let phone = "46988192326"
+
+    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+
+    console.log(carItems);
+    
 })
 
 function checkOpen(){
