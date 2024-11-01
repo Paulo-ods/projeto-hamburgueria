@@ -1,0 +1,11 @@
+let menu = document.getElementById('menu')
+let cartBtn = document.getElementById('cart-btn')
+let cartModal = document.getElementById('cart-modal')
+let cartitemsContainer = document.getElementById('cart-items')
+let cartTotal = document.getElementById('cart-total')
+let checkoutBtn = document.getElementById('checkout-btn')
+let closeModalBtn = document.getElementById('close-modal-btn')
+let cartCounter = document.getElementById('cart-count')
+let addressInput = document.getElementById('address')
+let addressWarn = docum.getElementById('address-warn')
+
