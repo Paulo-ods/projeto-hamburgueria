@@ -7,4 +7,6 @@
   - Responsivo
   - listagem dos produtos no carrinho
   - listagem de quantidade total de itens e do valor e etc.
+
+    
 ![image](https://github.com/user-attachments/assets/345b4ab2-68bb-44d0-a4ed-66c8be102fb0)
