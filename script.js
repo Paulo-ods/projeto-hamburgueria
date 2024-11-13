@@ -9,6 +9,10 @@ let cartCounter = document.getElementById('cart-count')
 let addressInput = document.getElementById('address')
 let addressWarn = document.getElementById('address-warn')
 let openClose = document.getElementById('date-span')
+let retirada = document.getElementById('retirada')
+let delivery = document.getElementById('delivery')
+let entrega = document.getElementById('entrega')
+
 let cart = []
 
 cartBtn.addEventListener("click", function(){
@@ -33,6 +37,10 @@ menu.addEventListener("click", function(event){
         addToCart(name, price)
     }
 })
+
+// retirada.addEventListener("click", function(event){
+//     entrega.style.display = 'none'
+// })
 
 function addToCart(name, price){
     let existingItem = cart.find(item => item.name === name)
@@ -174,7 +182,7 @@ checkoutBtn.addEventListener("click", function(){
 function checkOpen(){
     let now = new Date();
     let hour = now.getHours();
-    return hour >= 18 && hour < 22;
+    return hour >= 17 && hour < 22;
 }
 
 let isOpen = checkOpen()
