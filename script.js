@@ -12,6 +12,7 @@ let openClose = document.getElementById('date-span')
 let retirada = document.getElementById('retirada')
 let delivery = document.getElementById('delivery')
 let entrega = document.getElementById('entrega')
+let card = document.getElementById('Wcard')
 
 let cart = []
 
@@ -38,9 +39,24 @@ menu.addEventListener("click", function(event){
     }
 })
 
-// retirada.addEventListener("click", function(event){
-//     entrega.style.display = 'none'
-// })
+function toggleCheckbox(selectedCheckbox, otherCheckbox) {
+    if (selectedCheckbox.checked) {
+        otherCheckbox.checked = false; 
+
+        // Controla a visibilidade da div de entrega
+        if (selectedCheckbox === retirada) {
+            entrega.style.display = 'none'; 
+            card.classList.add('cardP')
+        } else {
+            entrega.style.display = 'block'; 
+        }
+    } else {
+        entrega.style.display = 'block'; 
+    }
+}
+
+retirada.addEventListener('change', () => toggleCheckbox(retirada, delivery));
+delivery.addEventListener('change', () => toggleCheckbox(delivery, retirada));
 
 function addToCart(name, price){
     let existingItem = cart.find(item => item.name === name)

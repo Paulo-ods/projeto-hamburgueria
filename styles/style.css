@@ -20,4 +20,17 @@ body {
         text-align: justify;
     }
 
+    input[type="checkbox"] {
+        width: 20px; 
+        height: 20px; 
+    }
+
+}
+
+@media(max-width: 599px){
+    .cardP {
+        width: 90%;
+    }
+
+
 }

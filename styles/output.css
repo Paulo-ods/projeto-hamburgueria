@@ -889,20 +889,12 @@ video {
   height: 8rem;
 }
 
-.h-4 {
-  height: 1rem;
-}
-
 .h-\[420px\] {
   height: 420px;
 }
 
 .h-full {
   height: 100%;
-}
-
-.h-5 {
-  height: 1.25rem;
 }
 
 .w-28 {
@@ -929,12 +921,12 @@ video {
   width: 100%;
 }
 
-.min-w-\[90\%\] {
-  min-width: 90%;
-}
-
 .max-w-7xl {
   max-width: 80rem;
+}
+
+.max-w-\[90\%\] {
+  max-width: 90%;
 }
 
 .flex-shrink {
@@ -2106,10 +2098,6 @@ video {
   padding: 1.25rem;
 }
 
-.p-4 {
-  padding: 1rem;
-}
-
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -2724,6 +2712,17 @@ body {
   .text-sm {
     text-align: justify;
   }
+
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media(max-width: 599px){
+  .cardP {
+    width: 90%;
+  }
 }
 
 @media (min-width: 640px) {
@@ -2821,6 +2820,12 @@ body {
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
