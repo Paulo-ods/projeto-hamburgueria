@@ -34,3 +34,17 @@ body {
 
 
 }
+
+.redes_sociais {
+    display: flex;
+    align-items: center;
+}
+
+.icones-footer {
+    height: 40px;
+    margin: 5px 15px 15px 32px;
+}
+
+nav {
+    box-shadow:  1px 3px 8px #0000003b;
+}

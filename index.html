@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
 </head>
 <body>
@@ -27,13 +28,21 @@
             <span class="text-white font-medium">Rua Dev Burguer 39, Fco Beltrão - PR</span>
 
             <div class=" px-4 py-1 rounded-lg mt-5" id="date-span">
-                <span class="text-white font-medium">Seg a Dom - 17:00 as 22:00</span>
+                <span class="text-white font-medium">Seg a Dom - 17:00 as 23:00</span>
             </div>
         </div>
      </header>
      <!-- FIM HEADER -->
 
-     <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">
+     <nav class="md:hidden">
+        <ul id="navbar" class="flex place-content-evenly w-full text-center">
+            <li class="hover:border-b-2 border-solid border-black py-3 w-6/12 md:text-2xl font-bold"><a href="#init">LANCHES</a></li>
+            <li class="hover:border-b-2 border-solid border-black py-3 w-6/12 md:text-2xl font-bold"><a href="#hotdog">HOT DOG</a></li>
+            <li class="hover:border-b-2 border-solid border-black py-3 w-6/12 md:text-2xl font-bold"><a href="#bebidas">BEBIDAS</a></li>
+        </ul>
+     </nav> 
+
+     <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-8" id="init">
         Conheça nosso Menu
      </h2>
 
@@ -123,9 +132,9 @@
 
         </main>
 
-        <div class="mx-auto max-w-7xl px-2 my-2" id="bebidas">
+        <div class="mx-auto max-w-7xl px-2 my-6 " id="bebidas">
             <h2 class="font-bold text-3xl">
-                Bebidas
+                <li>Bebidas</li>
             </h2>
         </div>
 
@@ -247,6 +256,41 @@
         </div>
 
       </div>
+
+      <!-- <div>
+        <div class="conteudo-footer">
+            <div class="localizacao">
+                <iframe src="https://maps.google.com.br/maps?f=q&source=s_q&hl=pt-BR&q=Avenida+Progresso,+363,Francisco+Beltrão-PR,85602-100&hnear=Avenida+Progresso,+363,Francisco+Beltrão-PR,85602-100&output=embed" frameborder="0"></iframe>
+            </div>
+            <div id="icones">
+                <span class="redes_sociais">
+                    <img class="icones-footer" src="img/whatsapp-icone.png" alt="WhatsApp">
+                    <p>(46) 9 9937-9115</p>--> 
+                <!--</span>
+                <span class="redes_sociais">
+                    <a href="https://www.facebook.com/p/cowboypolimentos-100065045257791/?paipv=0&eav=AfakeFi2QgKgnM-oF58JEPKFCS1gQiYacErVVyC7sxszOZaNFLeyz_t5emhFeLmucvY&_rdr" target="_blank">
+                        <img class="icones-footer" src="img/facebook-icone.png" alt="">
+                    </a>
+                     <p>Facebook do Cowboy Polimentos</p> -->
+                <!--</span>
+                <span class="redes_sociais">
+                    <a href="https://www.instagram.com/cowboyesteticaautomotiva/" target="_blank">
+                        <img class="icones-footer" src="img/instagram-icone.png" alt="instagram">
+                    </a>
+                     <p>Instagram do Cowboy Polimentos</p> -->
+                <!--</span>
+                <span class="redes_sociais">
+                    <img class="icones-footer" src="img/localizacao-icone.png" alt="localização">
+                     <p>Rua ternorio caxeta truco do bispo pardo</p> -->
+                <!--</span>
+            </div>
+        </div> -->
+
+        <div>
+            <!--<p>Cowboy Estética Automotiva Especializada</p>
+            <p>- Todos os direitos reservados. Site desenvolvido por</p>-->
+        </div>
+    </div>
 
       <footer class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center">
         <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">

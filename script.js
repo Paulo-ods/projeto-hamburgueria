@@ -198,7 +198,7 @@ checkoutBtn.addEventListener("click", function(){
 function checkOpen(){
     let now = new Date();
     let hour = now.getHours();
-    return hour >= 17 && hour < 22;
+    return hour >= 17 && hour < 23;
 }
 
 let isOpen = checkOpen()
@@ -210,3 +210,18 @@ if(isOpen){
     openClose.classList.remove("bg-green-600")
     openClose.classList.add("bg-red-500")
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.getElementById("navbar");
+    const navInitialOffsetTop = nav.offsetTop; // Obtém a posição inicial do navbar
+  
+    document.addEventListener("scroll", () => {
+      if (window.scrollY >= navInitialOffsetTop) {
+        nav.classList.add("fixed", "top-0", "bg-white", "shadow-lg", "z-50");
+      } else {
+        nav.classList.remove("fixed", "top-0", "bg-white", "shadow-lg", "z-50");
+      }
+    });
+  });
+  
+  
