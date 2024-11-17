@@ -34,7 +34,6 @@ menu.addEventListener("click", function(event){
         const name = parentButton.getAttribute("data-name")
         const price = parseFloat(parentButton.getAttribute("data-price"))
         
-        //add no carrinho
         addToCart(name, price)
     }
 })
@@ -43,10 +42,10 @@ function toggleCheckbox(selectedCheckbox, otherCheckbox) {
     if (selectedCheckbox.checked) {
         otherCheckbox.checked = false; 
 
-        // Controla a visibilidade da div de entrega
         if (selectedCheckbox === retirada) {
             entrega.style.display = 'none'; 
             card.classList.add('cardP')
+            addressWarn.classList.add("hidden")
         } else {
             entrega.style.display = 'block'; 
         }
@@ -172,10 +171,26 @@ checkoutBtn.addEventListener("click", function(){
         return
     }
 
-    if(addressInput.value === ""){
-        addressWarn.classList.remove("hidden")
-        addressInput.classList.add("border-red-500")
-        return
+    if (!retirada.checked && !delivery.checked) {
+        Toastify({
+            text: "Selecione retirada ou delivery antes de finalizar o pedido.",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "linear-gradient(to right, #d86b6b, #ef4444)",
+            },
+        }).showToast();
+        return;
+    }
+
+    if (delivery.checked && addressInput.value === "" ){
+            addressWarn.classList.remove("hidden")
+            addressInput.classList.add("border-red-500")
+            return
     }
 
     //api
@@ -187,6 +202,8 @@ checkoutBtn.addEventListener("click", function(){
 
     let message = encodeURIComponent(carItems)
     let phone = "46988192326"
+
+    let endereco = delivery.checked ? ` Endereço: ${addressInput.value}` : "";
 
     window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
 
