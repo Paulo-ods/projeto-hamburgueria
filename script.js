@@ -230,7 +230,7 @@ if(isOpen){
 
 document.addEventListener("DOMContentLoaded", () => {
     const nav = document.getElementById("navbar");
-    const navInitialOffsetTop = nav.offsetTop; // Obtém a posição inicial do navbar
+    const navInitialOffsetTop = nav.offsetTop; 
   
     document.addEventListener("scroll", () => {
       if (window.scrollY >= navInitialOffsetTop) {
