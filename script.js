@@ -195,17 +195,17 @@ checkoutBtn.addEventListener("click", function(){
 
     //api
     let carItems = cart.map((item) => {
-        return (
-            ` ${item.name} Quantidade: (${item.quantity}) Preço: R$(${item.price}) | `
-        )
-    }).join("")
-
-    let message = encodeURIComponent(carItems)
-    let phone = "46988192326"
-
-    let endereco = delivery.checked ? ` Endereço: ${addressInput.value}` : "";
-
-    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+        return `*${item.name}*\nQuantidade: (${item.quantity})\nPreço: R$(${item.price})\n`;
+      }).join("\n");
+      
+      let endereco = delivery.checked ? `\nEndereço: ${addressInput.value}` : "";
+      
+      let message = encodeURIComponent(carItems + endereco);
+      let phone = "46988192326";
+      
+      window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
+      
+      
 
     cart = []
     addressInput.value = ""
