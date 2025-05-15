@@ -215,7 +215,7 @@ checkoutBtn.addEventListener("click", function(){
 function checkOpen(){
     let now = new Date();
     let hour = now.getHours();
-    return hour >= 17 && hour < 23;
+    return hour >= 12 && hour < 23;
 }
 
 let isOpen = checkOpen()
